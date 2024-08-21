@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin:0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .variety{
+        position: absolute;
+        top:2px;
+        background-color: black;
+        color: white;
+        padding:10px 10px 10px 10px;
+    }
+    .c-br{
+        position: absolute;
+        top: 50%;
+        right: 40%;
+        letter-spacing: 4px;
+       color: white;
+        font-size: 40px;
+    }
+    .b-br {
+        background-color: black;
+        padding: 5px 8px;
+        opacity: 0.7;
+    }
+    .c-arch{
+        position: absolute;
+    }
+    img{
+        max-width: 100%;
+    }
+    .first{
+        padding: 0 40px;
+        position: relative;
+    }
+    .br{
+        float:left;
+        letter-spacing: 3px;
+    }
+    .list{
+        float:right;
+        letter-spacing: 3px;
+    }
+    .br > a {
+        text-decoration: none;
+        color: black;
+        padding: 8px 10px;
+    }
+    .br > a:hover {
+        background-color: rgb(209, 207, 207);
+    }
+    .list > ul > li > a{
+        text-decoration: none;
+        color: black;
+        padding: 8px 10px;
+    }
+    .list > ul > li > a:hover{
+        background-color: rgb(209, 207, 207);
+    }
+    .arch{
+        padding: 20px 0 20px 0;
+        position: fixed;
+        background-color:white;
+        z-index: 1;
+        width: 100%;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+        li{
+            display: inline;
+    }
+    .proj {
+        padding: 50px 40px 50px 40px;
+    }
+    .p-prj {
+        font-size: 25px;
+        
+    }
+    .line {
+        padding-top: 20px;
+        border-bottom: 1px solid rgb(228, 228, 228);
+    }
+    .row{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    .col-4{
+        width: 25%;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        font-family: "Segoe UI", Arial, sans-serif;
+    }
+    .para{
+        padding-top: 30px;
+        font-family: Verdana, sans-serif;
+        font-size: 15px;
+        line-height: 1.5;
+    }
+    .posi{
+        opacity: 0.60;
+    }
+    .black{
+        filter: grayscale(75%);
+    }
+    .but{
+        border: none;
+        padding: 10px 120px 10px 120px;
+        text-align: center;
+        font-family: "Segoe UI", Arial, sans-serif;
+        font-size: 15px;
+    }
+    .send{
+        background-color: black;
+        color: white;
+        padding: 10px 20px ;
+        border: none;
+    }
+    .box {
+        width: 100%;
+        padding: 8px;
+    }
+    .map{
+        padding-top: 40px;
+    }
+    footer{
+        color: white;
+        background-color: black;
+        text-align: center;
+        padding: 40px;
+    }
+    footer > p> a {
+        color: white;
+       
+    }
+    footer > p> a:hover {
+        color: green;
+    }
+</style>
+<body>
+    <header class="arch">
+        <div class="br">
+           <a href="#architect"><b>BR</b> Architects</a>
+        </div>
+        <div class="list">
+            <ul>
+               <li><a href="#projects">Projects</a></li>
+               <li><a href="#Abouts">About</a></li>
+               <li><a href="#contacts">contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="first" id="architect">
+          <img src="https://www.w3schools.com/w3images/architect.jpg">
+          <p class="c-br"><b class="b-br">BR</b> Architects</p>
+    </section>
+    <section class="proj" id="projects">
+        <p class="p-prj">Projects</p>
+        <p class="line"></p>
+    </section>
+    <section class="first">
+    <div class="row">
+    <div class="col-4">
+        <img src="https://www.w3schools.com/w3images/house5.jpg">
+        <p class="variety"> Summer House</p>
+    </div>
+    <div class="col-4">
+        <img src="https://www.w3schools.com/w3images/house2.jpg">
+        <p class="variety"> Brick House</p>
+    </div>
+    <div class="col-4">
+        <img src="https://www.w3schools.com/w3images/house3.jpg">
+        <p class="variety"> Renovated</p>
+    </div>
+    <div class="col-4">
+        <img src="https://www.w3schools.com/w3images/house4.jpg">
+        <p class="variety"> Barn House</p>
+    </div>
+    </div>
+</section>
+<section class="first">
+<div class="row">
+    <div class="col-4">
+        <img src="	https://www.w3schools.com/w3images/house2.jpg">
+        <p class="variety">Summer House</p>
+    </div>
+    <div class="col-4">
+        <img src="https://www.w3schools.com/w3images/house5.jpg">
+        <p class="variety">Brick House</p>
+    </div>
+    <div class="col-4">
+        <img src="https://www.w3schools.com/w3images/house4.jpg">
+        <p class="variety">Renovated</p>
+    </div>
+    <div class="col-4">
+        <img src="https://www.w3schools.com/w3images/house3.jpg">
+        <p class="variety">Barn House</p>
+    </div>
+</div>
+</section>
+<section class="proj" id="Abouts">
+    <p class="p-prj">About</p>
+    <p class="line"></p>
+    <p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</section>
+<section class="first">
+    <div class="row">
+        <div class="col-4 black">
+            <img src="https://www.w3schools.com/w3images/team2.jpg
+            ">
+            <p class="p-prj">John Doe</p><br>
+            <p class="posi">CEO & Founder</p><br> 
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p><br>
+            <button class="but">Contact</button>
+        </div>
+        <div class="col-4 black">
+            <img src="https://www.w3schools.com/w3images/team1.jpg">
+            <p class="p-prj">Jane Doe</p><br>
+            <p class="posi">Architect</p><br> 
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p><br>
+            <button class="but">Contact</button>
+        </div><div class="col-4 black">
+            <img src="https://www.w3schools.com/w3images/team3.jpg">
+            <p class="p-prj">Mike Ross</p><br>
+            <p class="posi">Architect</p><br> 
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p><br>
+            <button class="but">Contact</button>
+        </div><div class="col-4 black">
+            <img src="https://www.w3schools.com/w3images/team4.jpg">
+            <p class="p-prj">Dan Star</p><br>
+            <p class="posi">Architect</p><br> 
+            <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p><br>
+            <button class="but">Contact</button>
+        </div>   
+</section>
+<section class="proj" id="contacts">
+    <p class="p-prj">Contact</p>
+    <p class="line"></p>
+    <p class="para">Lets get in touch and talk about your next project.</p>
+</section>
+<form class="first">
+    <input class="box" type="text" placeholder=" Name" required="Name"><br><br>
+    <input class="box" type="email" placeholder="Email" required="Email"><br><br>
+    <input class="box" type="text" placeholder="Subject" required="Subject"><br><br>
+    <input class="box"type="text" placeholder="Comment" required="Comment"><br><br><br>
+    <button class="send">SEND MESSAGE</button>
+</form>
+<img class="map first" src="https://www.w3schools.com/w3images/map.jpg" class="first">
+<footer>
+    <p>Powered by 
+    <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </footer>
+</body>
+</html>
