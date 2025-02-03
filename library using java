@@ -1,0 +1,174 @@
+import java.util.*;
+abstract class library
+{
+	protected Book[] books;
+	protected int bookcount;
+	public library(int capacity)
+	{
+		books=new Book[capacity];
+		bookcount=0;
+	}
+	abstract void addBook(Book book);
+	abstract void viewbooks();
+	abstract void issuebooks(String title);
+	abstract void returnbooks(String title);
+	abstract void deletebooks(String title);
+
+}
+class mylibrary extends library
+{
+	public mylibrary(int capacity)
+	{
+		super(capacity);
+	}
+	@Override
+	void addBook(Book book)
+	{
+		if(bookcount<books.length)
+		{
+			books[bookcount++]=book;
+			System.out.println("Book added: "+book.gettitle());
+		}
+		else
+		{
+			System.out.println("Library is full,cannot add more books.");
+		}
+	}
+	@Override
+	void viewbooks()
+	{
+		System.out.println("Books in the Library: ");
+		for(int i=0; i<bookcount; i++)
+		{
+			System.out.println(books[i]);
+		}
+	}
+	@Override
+	void issuebooks(String title)
+	{
+		for(int i=0; i<bookcount; i++)
+		{
+			if(books[i].gettitle().equalsIgnoreCase(title)&&!books[i].isIssued())
+				books[i].setIssued(true);
+			System.out.println("Books issued: "+books[i].gettitle());
+			return;
+		}
+		System.out.println("Book not found or already issued.");
+	}
+
+	@Override
+	void returnbooks(String title)
+	{
+		for(int i=0; i<bookcount; i++)
+		{
+			if(books[i].gettitle().equalsIgnoreCase(title)&&books[i].isIssued())
+			{
+				books[i].setIssued(false);
+				System.out.println("Book returned: "+books[i].gettitle());
+				return;
+			}
+		}
+		System.out.println("Book not found or was not issued.");
+	}
+	@Override
+	void deletebooks(String title)
+	{
+		for(int i=0; i<bookcount; i++)
+		{
+			if(books[i].gettitle().equalsIgnoreCase(title))
+			{
+				System.out.println("Book deleted: "+books[i].gettitle());
+				for(int j=i; j<bookcount-1; j++)
+				{
+					books[j]=books[j+1];
+				}
+				books[--bookcount]=null;
+				return;
+			}
+		}
+		System.out.println("Books not found");
+	}
+}
+class Book
+{
+	private String title;
+	private boolean issued;
+	public Book (String title)
+	{
+		this.title=title;
+		this.issued=false;
+	}
+	public String gettitle()
+	{
+		return title;
+	}
+	public boolean isIssued()
+	{
+		return issued;
+	}
+	public void setIssued(boolean issued)
+	{
+		this.issued=issued;
+	}
+	@Override
+	public String toString()
+	{
+		return title +(issued ?"(Issued)":"(Available)");
+	}
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+		mylibrary library =new mylibrary(100);
+		Scanner scan =new Scanner(System.in);
+		int choice;
+		do {
+			System.out.println("\nLibrary System Menu:");
+			System.out.println("1. Add Book");
+			System.out.println("2. View Book");
+			System.out.println("3. Issue Book");
+			System.out.println("4. Return Book");
+			System.out.println("5. Delete Book");
+			System.out.println("6. Exit");
+			System.out.println("Enter your choice: ");
+			choice=scan.nextInt();
+			scan.nextLine();
+			switch(choice)
+			{
+			case 1:
+				System.out.println("Enter book title: ");
+				String title=scan.nextLine();
+				library.addBook(new Book (title));
+				break;
+			case 2:
+				library.viewbooks();
+				break;
+			case 3:
+				System.out.println("Enter book title to issue: ");
+				title=scan.nextLine();
+				library.issuebooks(title);
+				break;
+			case 4:
+				System.out.println("Enter book title to return: ");
+				title=scan.nextLine();
+				library.returnbooks(title);
+				break;
+			case 5:
+				System.out.println("Enter book title to delete: ");
+				title=scan.nextLine();
+				library.deletebooks(title);
+				break;
+			case 6:
+				System.out.println("Exiting the System.");
+				break;
+			default:
+				System.out.println("Invalid choice .Please try again.");
+				break;
+			}
+		}
+		while(choice!=6 );
+	}
+}
+
+
